@@ -4,7 +4,7 @@ import api from "../api/axios.js";
 import { AuthContext } from "../context/AuthContext.jsx";
 import {Plus, Trash2, LogOut, Menu, X, Send, MessageSquare,} from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useThemeStore } from "../store/useThemeStore.jsx";
+import { useThemeStore } from "../store/UseThemeStore.jsx";
 import ThemeButton from "../components/ThemeButton.jsx";
 import chatbotIcon from "../assets/chatbot.png";
 

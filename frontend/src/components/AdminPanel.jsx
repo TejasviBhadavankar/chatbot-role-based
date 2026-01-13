@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getBotData, createBotData, deleteBotData, updateBotData,} from "../api/admin.api.js";
 import { AuthContext } from "../context/AuthContext.jsx";
-import { useThemeStore } from "../store/useThemeStore.jsx";
+import { useThemeStore } from "../store/UseThemeStore.jsx";
 import ThemeButton from "./ThemeButton.jsx";
 
 import chatbotIcon from "../assets/chatbot.png";

@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { useThemeStore } from "../store/useThemeStore.jsx";
+import { useThemeStore } from "../store/UseThemeStore.jsx";
 
 export const AuthContext = createContext();
 

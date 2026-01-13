@@ -5,7 +5,7 @@ import Register from "./pages/Register.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
 import AdminPanel from "./components/AdminPanel.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import { useThemeStore } from "./store/useThemeStore.jsx";
+import { useThemeStore } from "./store/UseThemeStore.jsx";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);
