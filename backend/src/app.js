@@ -7,21 +7,17 @@ import adminRoutes from "./routes/admin.routes.js";
 
 const app = express();
 
-
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-  ],
+  origin: process.env.NODE_ENV === "production"
+    ? true
+    : "http://localhost:5173",
   credentials: true,
 }));
-
-
 
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/admin", adminRoutes);
-
 
 export default app;
