@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
-import { registerUser } from "../api/auth.api";
-import { AuthContext } from "../context/AuthContext";
+import { registerUser } from "../api/auth.api.js";
+import { AuthContext } from "../context/AuthContext.jsx";
 import { useNavigate, Link } from "react-router-dom";
 import chatbotIcon from "../assets/chatbot.png";
 

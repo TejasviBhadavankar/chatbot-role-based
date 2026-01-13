@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import UserDashboard from "./pages/UserDashboard";
-import AdminPanel from "./components/AdminPanel";
-import ProtectedRoute from "./components/ProtectedRoute";
-import { useThemeStore } from "./store/useThemeStore";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import UserDashboard from "./pages/UserDashboard.jsx";
+import AdminPanel from "./components/AdminPanel.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import { useThemeStore } from "./store/useThemeStore.jsx";
 
 function App() {
   const theme = useThemeStore((state) => state.theme);

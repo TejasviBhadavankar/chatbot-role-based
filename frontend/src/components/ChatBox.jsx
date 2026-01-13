@@ -1,11 +1,11 @@
 import { useEffect, useState, useContext, useRef } from "react";
-import { sendMessage, getHistory } from "../api/chat.api";
-import api from "../api/axios";
-import { AuthContext } from "../context/AuthContext";
+import { sendMessage, getHistory } from "../api/chat.api.js";
+import api from "../api/axios.js";
+import { AuthContext } from "../context/AuthContext.jsx";
 import {Plus, Trash2, LogOut, Menu, X, Send, MessageSquare,} from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useThemeStore } from "../store/useThemeStore";
-import ThemeButton from "../components/ThemeButton";
+import { useThemeStore } from "../store/useThemeStore.jsx";
+import ThemeButton from "../components/ThemeButton.jsx";
 import chatbotIcon from "../assets/chatbot.png";
 
 const generateId = () =>

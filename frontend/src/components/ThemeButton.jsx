@@ -1,5 +1,5 @@
 import { Palette } from "lucide-react";
-import { useThemeStore } from "../store/useThemeStore";
+import { useThemeStore } from "../store/useThemeStore.jsx";
 
 const themes = [
  "light",
