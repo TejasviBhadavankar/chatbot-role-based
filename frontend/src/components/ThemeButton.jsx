@@ -19,12 +19,13 @@ export default function ThemeButton() {
         <Palette size={16} /> Theme
       </label>
 
-      <ul className="dropdown-content z-100 menu p-2 bg-base-200 rounded-box w-48 shadow-xl">
+      <ul className="dropdown-content z-50 menu p-2 bg-base-200 rounded-box w-48 shadow-xl">
         {themes.map((t) => (
           <li key={t}>
             <button
               onClick={() => setTheme(t, userId)}
-              className={`capitalize font-semibold text-neutral
+              className={`capitalize font-medium
+                text-base-content opacity-100
                 hover:bg-primary hover:text-primary-content
                 ${theme === t ? "bg-primary text-primary-content" : ""}`}
             >
