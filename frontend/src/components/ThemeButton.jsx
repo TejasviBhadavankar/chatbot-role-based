@@ -2,78 +2,31 @@ import { Palette } from "lucide-react";
 import { useThemeStore } from "../store/UseThemeStore.jsx";
 
 const themes = [
- "light",
-      "dark",
-      "cupcake",
-      "bumblebee",
-      "emerald",
-      "corporate",
-      "synthwave",
-      "retro",
-      "cyberpunk",
-      "valentine",
-      "halloween",
-      "garden",
-      "forest",
-      "aqua",
-      "lofi",
-      "pastel",
-      "fantasy",
-      "wireframe",
-      "black",
-      "luxury",
-      "dracula",
-      "cmyk",
-      "autumn",
-      "business",
-      "acid",
-      "lemonade",
-      "night",
-      "coffee",
-      "winter",
-      "dim",
-      "nord",
-      "sunset",
+  "light","dark","cupcake","bumblebee","emerald","corporate","synthwave",
+  "retro","cyberpunk","valentine","halloween","garden","forest","aqua",
+  "lofi","pastel","fantasy","wireframe","black","luxury","dracula","cmyk",
+  "autumn","business","acid","lemonade","night","coffee","winter","dim",
+  "nord","sunset",
 ];
 
-const ThemeButton = () => {
+export default function ThemeButton() {
   const { theme, setTheme } = useThemeStore();
+  const userId = localStorage.getItem("userId");
 
   return (
     <div className="dropdown dropdown-end">
-      <label
-        tabIndex={0}
-        className="btn btn-sm btn-ghost flex items-center gap-2"
-      >
-        <Palette size={16} />
-        Theme
+      <label tabIndex={0} className="btn btn-sm btn-ghost gap-2">
+        <Palette size={16} /> Theme
       </label>
 
-      <ul
-        tabIndex={0}
-        className="
-          dropdown-content 
-          z-100 
-          menu 
-          p-2 
-          shadow-xl 
-          bg-base-100 
-          rounded-box 
-          w-44
-        "
-      >
+      <ul className="dropdown-content z-100 menu p-2 bg-base-200 rounded-box w-48 shadow-xl">
         {themes.map((t) => (
           <li key={t}>
             <button
-              onClick={() => setTheme(t)}
-              className={`
-                capitalize 
-                text-base-content 
-                font-medium
-                hover:bg-primary 
-                hover:text-primary-content
-                ${theme === t ? "bg-primary text-primary-content" : ""}
-              `}
+              onClick={() => setTheme(t, userId)}
+              className={`capitalize font-semibold text-neutral
+                hover:bg-primary hover:text-primary-content
+                ${theme === t ? "bg-primary text-primary-content" : ""}`}
             >
               {t}
             </button>
@@ -82,6 +35,4 @@ const ThemeButton = () => {
       </ul>
     </div>
   );
-};
-
-export default ThemeButton;
+}
