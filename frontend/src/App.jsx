@@ -5,11 +5,14 @@ import Register from "./pages/Register.jsx";
 import UserDashboard from "./pages/UserDashboard.jsx";
 import AdminPanel from "./components/AdminPanel.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import { useThemeStore } from "./store/UseThemeStore.jsx";
+
 
 function App() {
  
-
+    const theme = localStorage.getItem("chat-theme");
+      if (theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+      }
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/login" replace />} />
