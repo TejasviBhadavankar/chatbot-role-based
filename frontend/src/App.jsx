@@ -1,16 +1,23 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import UserDashboard from "./pages/UserDashboard";
-import AdminPanel from "./components/AdminPanel";
-import ProtectedRoute from "./components/ProtectedRoute";
+import { useEffect } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import UserDashboard from "./pages/UserDashboard.jsx";
+import AdminPanel from "./components/AdminPanel.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import { useThemeStore } from "./store/UseThemeStore.jsx";
 
 function App() {
+  const theme = useThemeStore((state) => state.theme);
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
   return (
     <Routes>
-      {/* ✅ Default route = Login */}
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
 
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
       <Route

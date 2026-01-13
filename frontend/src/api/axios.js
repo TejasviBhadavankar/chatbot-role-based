@@ -1,7 +1,8 @@
+
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://chatbot-application-l03b.onrender.com/api",
+  baseURL: "https://chatbot-role-based.onrender.com",
 });
 
 api.interceptors.request.use((req) => {
