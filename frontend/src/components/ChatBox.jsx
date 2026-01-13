@@ -2,7 +2,15 @@ import { useEffect, useState, useContext, useRef } from "react";
 import { sendMessage, getHistory } from "../api/chat.api.js";
 import api from "../api/axios.js";
 import { AuthContext } from "../context/AuthContext.jsx";
-import {Plus, Trash2, LogOut, Menu, X, Send, MessageSquare,} from "lucide-react";
+import {
+  Plus,
+  Trash2,
+  LogOut,
+  Menu,
+  X,
+  Send,
+  MessageSquare,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useThemeStore } from "../store/UseThemeStore.jsx";
 import ThemeButton from "../components/ThemeButton.jsx";
@@ -110,8 +118,9 @@ const ChatBox = () => {
 
   return (
     <div className="h-screen flex bg-base-100 overflow-hidden">
+      {/* Sidebar */}
       <aside
-        className={`fixed md:static z-40 h-full w-64 bg-base-200 transform transition-transform
+        className={`fixed md:static z-40 h-full w-64 bg-base-200 flex flex-col transform transition-transform
         ${showSidebar ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
       >
         <div className="p-3">
@@ -153,13 +162,15 @@ const ChatBox = () => {
           ))}
         </div>
 
-        <div className="p-3 space-y-2">
+        {/* Bottom buttons */}
+        <div className="p-3 space-y-2 mt-auto">
           <button
             onClick={deleteAllHistory}
             className="w-full flex items-center gap-2 border px-3 py-2 rounded-lg text-error"
           >
             <Trash2 size={18} /> Delete History
           </button>
+
           <button
             onClick={handleLogout}
             className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-base-300"
@@ -168,6 +179,8 @@ const ChatBox = () => {
           </button>
         </div>
       </aside>
+
+      {/* Chat area */}
       <div className="flex-1 flex flex-col relative">
         <header className="bg-primary text-primary-content px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -180,7 +193,6 @@ const ChatBox = () => {
           </div>
           <div className="flex items-center gap-2">
             <ThemeButton />
-
             <button
               className="md:hidden"
               onClick={() => setShowSidebar(!showSidebar)}
@@ -189,6 +201,7 @@ const ChatBox = () => {
             </button>
           </div>
         </header>
+
         <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4">
           {!activeId && (
             <p className="text-center opacity-60 mt-10">
@@ -244,4 +257,5 @@ const ChatBox = () => {
     </div>
   );
 };
+
 export default ChatBox;
