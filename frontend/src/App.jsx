@@ -8,10 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { useThemeStore } from "./store/UseThemeStore.jsx";
 
 function App() {
-  const theme = useThemeStore((state) => state.theme);
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
+  
 
   return (
     <Routes>
